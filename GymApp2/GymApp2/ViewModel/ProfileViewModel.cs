@@ -118,7 +118,7 @@ namespace GymApp2.ViewModel
                 Score += list.Object.Score;
             }
 
-            return user.Object;
+            return user.Object;//Очко
 
         }
     }
