@@ -21,8 +21,15 @@
             <Label TextColor="Black" 
                    HorizontalOptions="Center" 
                    VerticalOptions="Start" 
-                   Text="{Binding Source={x:Reference calendarControl},Path=SelectedDate}" />
-            <Label Text="{Binding Score}"/>
+                   Text="{Binding Source={x:Reference calendarControl},Path=SelectedDate}"
+                   FontSize="30"
+                   FontFamily="TitilliumWeb-Black.ttf"/>
+            <Label Text="{Binding Score}"
+                   TextColor="Black" 
+                   HorizontalOptions="Center" 
+                   VerticalOptions="Start"
+                   FontSize="30"
+                   FontFamily="TitilliumWeb-Black.ttf"/>
         </StackLayout>
     </ContentView.Content>
 </ContentView>

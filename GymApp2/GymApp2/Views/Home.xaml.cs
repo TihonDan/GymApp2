@@ -23,20 +23,22 @@ namespace GymApp.Views
         UserService us = new UserService();
 
         ProfileViewModel prm = new ProfileViewModel();
+
+        Category selectLang;
         public Home()
         {
             client = new FirebaseClient("https://gymapp-42c7a-default-rtdb.firebaseio.com/");
             BindingContext = us;
             BindingContext = this;
             BindingContext = prm;
-            InitializeComponent();  
+            selectLang = null;
+            InitializeComponent();
         }
 
 
         private async void CollectionView_SelectionChanged(System.Object sender, Xamarin.Forms.SelectionChangedEventArgs e)
         {
-            Category selectLang = e.CurrentSelection[0] as Category;
-
+            selectLang = e.CurrentSelection[0] as Category;
             await Navigation.PushModalAsync(new CategoryView(selectLang.CategoryID));
 
         }

@@ -23,5 +23,10 @@ namespace GymApp2.Views
         {
             Application.Current.MainPage.Navigation.PushModalAsync(new AppShell());
         }
+
+        private async void Button_Clicked_1(object sender, EventArgs e)
+        {
+            await Application.Current.MainPage.Navigation.PushModalAsync(new AppShell());
+        }
     }
 }

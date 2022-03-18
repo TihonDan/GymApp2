@@ -14,12 +14,28 @@
     <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="400"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="380"/>
                 <RowDefinition Height="10"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <Frame Grid.Row="0" 
+            <Frame     Grid.Row="0"
+                       Padding="0"
+                       VerticalOptions="Start"
+                       HorizontalOptions="Start"
+                       BackgroundColor="Transparent"
+                       Margin="10"
+                       CornerRadius="12"
+                       BorderColor="Black">
+                <ImageButton Source="back.png"
+                                 Padding="6"
+                                 x:Name="btnExit"
+                                 BackgroundColor="Transparent"
+                                 Clicked="btn1_Clicked_1"/>
+            </Frame>
+
+            <Frame Grid.Row="1" 
                    BackgroundColor="Transparent">
                 <Grid>
                     <Grid.RowDefinitions>
@@ -62,7 +78,8 @@
                                                FontAttributes="Bold"
                                                TextColor="White"
                                                HorizontalOptions="Center"
-                                               Grid.Row="1"/>
+                                               Grid.Row="1"
+                                               FontFamily="TitilliumWeb-Black.ttf"/>
                                     </Grid>
                                 </StackLayout>
                             </DataTemplate>
@@ -71,7 +88,7 @@
 
                 </Grid>
             </Frame>
-            <Frame Grid.Row="2"
+            <Frame Grid.Row="3"
                    HorizontalOptions="Center"
                    VerticalOptions="End"
                    Margin="270,0,0,120"
@@ -87,7 +104,7 @@
                     />
             </Frame>
 
-            <Frame Grid.Row="2"
+            <Frame Grid.Row="3"
                    HorizontalOptions="Center"
                    VerticalOptions="End"
                    Margin="-270,0,0,120"
@@ -104,7 +121,7 @@
                              RotationY="180"/>
             </Frame>
 
-            <Label Grid.Row="2"
+            <Label Grid.Row="3"
                    Text="{Binding Duration}"
                    FontSize="45"
                    FontAttributes="Bold"
@@ -112,9 +129,10 @@
                    HorizontalOptions="Center"
                    Margin="0,0,0,80"
                    TextColor="White"
+                   FontFamily="TitilliumWeb-Black.ttf"
                    x:Name="labelSecond"/>
             <Frame 
-                   Grid.Row="2"
+                   Grid.Row="3"
                    HorizontalOptions="Center"
                    VerticalOptions="Center"
                    Margin="0,100,0,0"

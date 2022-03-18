@@ -1,16 +1,63 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="GymApp2.Views.Congratulations">
+             x:Class="GymApp2.Views.Congratulations"
+             BackgroundImageSource="welcomefone.jpg">
+    
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Congratulations"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" 
-                   FontSize="40"
-                   FontAttributes="Bold"/>
-            <Button Text="OK"
-                    Clicked="Button_Clicked"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0"
+                       Text="Conagratialtions"
+                       FontSize="40"
+                       FontFamily="TitilliumWeb-Black.ttf"
+                       TextColor="Black"
+                       HorizontalOptions="Center"
+                       Margin="0,50,0,0"/>
+
+                <Frame Grid.Row="1"
+                       CornerRadius="90"
+                       BorderColor="Black"
+                       Padding="40"
+                       Margin="120,60,120,0"
+                       BackgroundColor="Transparent">
+                    <StackLayout>
+                        <Label Text="Score"
+                               FontSize="30"
+                               TextColor="Black"
+                               HorizontalOptions="Center"
+                               FontFamily="TitilliumWeb-Black.ttf"/>
+                        <Label Text="+25"
+                               TextColor="Black"
+                               FontSize="30"
+                               HorizontalOptions="Center"
+                               FontFamily="TitilliumWeb-Black.ttf"
+                               Margin="0,0,8,0"/>
+                    </StackLayout>
+                </Frame>
+
+                <Frame Grid.Row="2"
+                       CornerRadius="50"
+                       BorderColor="Black"
+                       HorizontalOptions="Center"
+                       BackgroundColor="Transparent"
+                       Margin="0,160,0,0"
+                       Padding="10">
+                    <Button Text="OK"
+                            TextColor="Black"
+                            FontSize="30"
+                            FontFamily="TitilliumWeb-Black.ttf"
+                            HorizontalOptions="Center"
+                            BackgroundColor="Transparent"
+                            Clicked="Button_Clicked_1"/>
+                </Frame>
+
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

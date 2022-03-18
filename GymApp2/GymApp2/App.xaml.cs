@@ -1,5 +1,6 @@
 ﻿using GymApp;
 using GymApp.Views;
+using GymApp2.Views;
 using System;
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -12,16 +13,16 @@ namespace GymApp2
         public App()
         {
             InitializeComponent();
-            //MainPage = new LoginView();
-            string uname = Preferences.Get("Username", String.Empty);
-            if (String.IsNullOrEmpty(uname))
-            {
-                MainPage = new LoginView();
-            }
-            else
-            {
-                MainPage = new AppShell();
-            }
+            MainPage = new Congratulations();
+            //string uname = Preferences.Get("Username", String.Empty);
+            //if (String.IsNullOrEmpty(uname))
+            //{
+            //    MainPage = new LoginView();
+            //}
+            //else
+            //{
+            //    MainPage = new AppShell();
+            //}
         }
 
         protected override void OnStart()

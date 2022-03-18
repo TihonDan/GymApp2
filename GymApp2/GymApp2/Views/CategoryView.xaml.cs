@@ -141,5 +141,10 @@ namespace GymApp.Views
 
 
         }
+
+        private async void btn1_Clicked_1(object sender, EventArgs e)
+        {
+            await Application.Current.MainPage.Navigation.PushModalAsync(new AppShell());
+        }
     }
 }

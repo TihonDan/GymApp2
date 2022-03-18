@@ -7,3 +7,4 @@ using Xamarin.Forms.Xaml;
 [assembly: ExportFont("DigitalStripBB_Reg.otf", Alias = "DigitalStripBB_Reg.otf")]
 [assembly: ExportFont("digital-7.regular.ttf", Alias = "digital-7.regular.ttf")]
 [assembly: ExportFont("TitilliumWeb-Black.ttf", Alias = "TitilliumWeb-Black.ttf")]
+[assembly: ExportFont("Heartbit-Bold.otf", Alias = "Heartbit-Bold.otf")]

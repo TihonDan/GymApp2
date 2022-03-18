@@ -62,7 +62,8 @@
                                FontSize="45"
                                TextColor="Black"
                                HorizontalOptions="Center"
-                               Margin="50,17,0,0"/>
+                               Margin="50,17,0,0"
+                               FontFamily="TitilliumWeb-Black.ttf"/>
                     </Grid>
                 </Frame>
 
@@ -70,17 +71,19 @@
                        CornerRadius="90"
                        BorderColor="Black"
                        Padding="40"
-                       Margin="120,80,120,0"
+                       Margin="120,60,120,0"
                        BackgroundColor="Transparent">
                     <StackLayout>
-                        <Label Text="Очки"
+                        <Label Text="Score"
                                FontSize="30"
                                TextColor="Black"
-                               HorizontalOptions="Center"/>
+                               HorizontalOptions="Center"
+                               FontFamily="TitilliumWeb-Black.ttf"/>
                         <Label Text="{Binding Score}"
-                           TextColor="Black"
-                           FontSize="30"
-                           HorizontalOptions="Center"/>
+                               TextColor="Black"
+                               FontSize="30"
+                               HorizontalOptions="Center"
+                               FontFamily="TitilliumWeb-Black.ttf"/>
                     </StackLayout>
 
                 </Frame>
@@ -103,14 +106,15 @@
                                CornerRadius="15">
                             <StackLayout VerticalOptions="Center"
                                          Padding="25">
-                                <Label Text="Возраст"
-                                       FontSize="20"
+                                <Label Text=" Age"
+                                       FontSize="18"
                                        FontAttributes="Bold"
-                                       />
+                                       FontFamily="TitilliumWeb-Black.ttf"/>
                                 <Label Text="{Binding Age}"
                                        FontSize="30"
                                        FontAttributes="Bold"
                                        VerticalOptions="Center"
+                                       FontFamily="TitilliumWeb-Black.ttf"
                                        Margin="18,0,0,0"/>
                             </StackLayout>
                         </Frame>
@@ -122,13 +126,15 @@
                                CornerRadius="15">
                             <StackLayout VerticalOptions="Center"
                                          Padding="25">
-                                <Label Text="Рост"
+                                <Label Text="Height"
                                        FontSize="20"
-                                       FontAttributes="Bold"/>
+                                       FontAttributes="Bold"
+                                       FontFamily="TitilliumWeb-Black.ttf"/>
                                 <Label Text="{Binding Height}"
                                        FontSize="30"
                                        FontAttributes="Bold"
-                                       VerticalOptions="Center"/>
+                                       VerticalOptions="Center"
+                                       FontFamily="TitilliumWeb-Black.ttf"/>
                             </StackLayout>
                         </Frame>
 
@@ -139,13 +145,15 @@
                                CornerRadius="15">
                             <StackLayout VerticalOptions="Center"
                                          Padding="25">
-                                <Label Text="Вес"
+                                <Label Text="Weight"
                                        FontSize="20"
-                                       FontAttributes="Bold"/>
+                                       FontAttributes="Bold"
+                                       FontFamily="TitilliumWeb-Black.ttf"/>
                                 <Label Text="{Binding Weight}"
                                        FontSize="30"
                                        FontAttributes="Bold"
-                                       VerticalOptions="Center"/>
+                                       VerticalOptions="Center"
+                                       FontFamily="TitilliumWeb-Black.ttf"/>
                             </StackLayout>
                         </Frame>
 

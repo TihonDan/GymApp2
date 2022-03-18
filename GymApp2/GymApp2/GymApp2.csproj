@@ -11,6 +11,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Fonts\TitilliumWeb-Black.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Fonts\TitilliumWeb-Black.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="FirebaseDatabase.net" Version="4.0.7" />
     <PackageReference Include="HorizontalCalendarControl" Version="1.0.2" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2337" />
