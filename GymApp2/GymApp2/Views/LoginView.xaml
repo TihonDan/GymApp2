@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:GymApp.ViewModels"
+             xmlns:local="clr-namespace:GymApp.Custom"
+             x:Class="GymApp.Views.LoginView"  
+             BackgroundImageSource="LoginFon2.jpg"
+             >
+   
+   
+    <ContentPage.BindingContext>
+        <vm:LoginViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <Grid Padding="20" VerticalOptions="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            
+
+            <StackLayout Grid.Row="0" VerticalOptions="Center">
+                <Image Source="logo3.png"
+                       WidthRequest="100" HeightRequest="300"/>
+
+                <!--<Label Text="Начни сейчас" FontFamily="digital-7.regular.ttf#Digital-7 Regular"
+                       TextColor="Purple" FontSize="40" HorizontalOptions="Start" Margin="20"/>-->
+
+            </StackLayout>
+
+            <StackLayout Grid.Row="1" Spacing="10" Margin="0,30,0,0">
+
+                <Frame CornerRadius="8" HasShadow="False" Padding="10, 5, 10, 5" BackgroundColor="Transparent" BorderColor="White">
+                    <local:MyEntry Placeholder="Enter Username" Text="{Binding Username}" FontAttributes="Bold" PlaceholderColor="White" TextColor="White"/>
+                </Frame>
+
+                <Frame CornerRadius="8" HasShadow="False" Padding="10, 5, 10, 5" BackgroundColor="Transparent" BorderColor="White">
+                    <local:MyEntry Placeholder="Enter Password" IsPassword="True"  Text="{Binding Password}" FontAttributes="Bold" PlaceholderColor="White" TextColor="White"/>
+                </Frame>
+                
+                <Button Text="Login" HorizontalOptions="Center" BackgroundColor="Purple"
+                        TextColor="White" WidthRequest="200" HeightRequest="60" CornerRadius="8"
+                        Command="{Binding LoginCommand}"/>
+
+
+
+                <Button Text="Register" HorizontalOptions="Center" BackgroundColor="DarkOrange"
+                        TextColor="White" WidthRequest="200" HeightRequest="60" CornerRadius="8"
+                        Command="{Binding RegisterViewCommand}"
+                        />
+            </StackLayout>
+
+        </Grid>
+    </ContentPage.Content>
+
+</ContentPage>

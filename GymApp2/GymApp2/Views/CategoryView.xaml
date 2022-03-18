@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:helpers="clr-namespace:GymApp.Helpers"
+             xmlns:nb="clr-namespace:GymApp.Views"
+             xmlns:model="clr-namespace:GymApp.Model"
+             x:Class="GymApp.Views.CategoryView"
+             BackgroundImageSource="welcomefone.jpg">
+
+    <ContentPage.BindingContext>
+        <model:Exercises/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="400"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Frame Grid.Row="0" 
+                   BackgroundColor="Transparent">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="350"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <CollectionView ItemsSource="{Binding Items}"
+                                    VerticalOptions="Start"
+                                    VerticalScrollBarVisibility="Never"
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                    Grid.ColumnSpan="2"
+                                    SelectionMode="None"
+                                    x:Name="SomeCollection" 
+                                    BackgroundColor="Transparent">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <StackLayout>
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="300"/>
+                                            <RowDefinition Height="40"/>
+                                        </Grid.RowDefinitions>
+
+                                        <Frame Grid.Row="0"
+                                               CornerRadius="20"
+                                               Padding="0"
+                                               BackgroundColor="Transparent">
+                                            <Image Source="{Binding ImageURL}"
+                                                   HorizontalOptions="FillAndExpand"
+                                                   VerticalOptions="FillAndExpand"
+                                                   BackgroundColor="Transparent"/>
+                                        </Frame>
+                                        <Label Text="{Binding Name}"
+                                               FontSize="20"
+                                               FontAttributes="Bold"
+                                               TextColor="White"
+                                               HorizontalOptions="Center"
+                                               Grid.Row="1"/>
+                                    </Grid>
+                                </StackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+
+                </Grid>
+            </Frame>
+            <Frame Grid.Row="2"
+                   HorizontalOptions="Center"
+                   VerticalOptions="End"
+                   Margin="270,0,0,120"
+                   Padding="0"
+                   BackgroundColor="Transparent"
+                   CornerRadius="25">
+                <ImageButton Source="rightIcon.png"
+                    HorizontalOptions="Center"
+                    VerticalOptions="End"
+                    Padding="8"
+                    BackgroundColor="Transparent"
+                    Clicked="Button_Clicked"
+                    />
+            </Frame>
+
+            <Frame Grid.Row="2"
+                   HorizontalOptions="Center"
+                   VerticalOptions="End"
+                   Margin="-270,0,0,120"
+                   Padding="0"
+                   BackgroundColor="Transparent"
+                   CornerRadius="25">
+                <ImageButton Source="rightIcon.png"
+                             HorizontalOptions="Center"
+                             VerticalOptions="End"
+                             Padding="8"
+                             BackgroundColor="Transparent"
+                             x:Name="btn1"
+                             Clicked="btn1_Clicked"
+                             RotationY="180"/>
+            </Frame>
+
+            <Label Grid.Row="2"
+                   Text="{Binding Duration}"
+                   FontSize="45"
+                   FontAttributes="Bold"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   Margin="0,0,0,80"
+                   TextColor="White"
+                   x:Name="labelSecond"/>
+            <Frame 
+                   Grid.Row="2"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   Margin="0,100,0,0"
+                   Padding="0"
+                   BackgroundColor="Purple"
+                   CornerRadius="90"
+                   x:Name="frameBtn">
+                <ImageButton Source="pauseBtn.png"
+                    HorizontalOptions="Center"
+                    VerticalOptions="End"
+                    Padding="10"
+                    BackgroundColor="Purple"
+                    Command="{Binding StartTimerCommand}"
+                    x:Name="btnPlay"/>
+            </Frame>
+        </Grid>
+        
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local ="clr-namespace:GymApp.Helpers"
+             xmlns:vm ="clr-namespace:GymApp.Services"
+             xmlns:model="clr-namespace:GymApp.Model"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="True" 
+             x:Class="GymApp.Views.Home">
+    
+    <ContentView.BindingContext>
+        <local:AddCategoryData/>
+    </ContentView.BindingContext>
+
+    <ContentView.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <ScrollView Grid.Row="0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Frame Grid.Row="0"
+                           Padding="0"
+                           CornerRadius="20">
+                        <AbsoluteLayout>
+                            <Image Source="welcomefone.jpg" 
+                           AbsoluteLayout.LayoutBounds="1,1,1,6" 
+                           AbsoluteLayout.LayoutFlags="All"  
+                           Aspect="Fill"/>
+
+                            <StackLayout BackgroundColor="Transparent">
+                                <Label Text="HELLO" 
+                               FontSize="40"
+                               Margin="8,8,0,0"
+                               FontFamily="TitilliumWeb-Black.ttf"
+                               TextColor="Black"/>
+                                <Label Text="You Strong" 
+                               FontSize="30"
+                               Margin="20,0,0,0"
+                               FontFamily="TitilliumWeb-Black.ttf"
+                               FontAttributes="Italic"
+                               TextColor="Black"/>
+                            </StackLayout>
+                        </AbsoluteLayout>
+                    </Frame>
+
+                    <CollectionView ItemsSource="{Binding Categories}"
+                            SelectionMode="Single"
+                            VerticalScrollBarVisibility="Never"
+                            SelectionChanged="CollectionView_SelectionChanged"
+                            Grid.Row="1" 
+                            BackgroundColor="Black">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <StackLayout BackgroundColor="Transparent">
+                                    <Grid Padding="0"
+                                          RowDefinitions="Auto"
+                                          RowSpacing="0"
+                                          BackgroundColor="Transparent">
+                                        <Frame Grid.Row="0"
+                                               CornerRadius="20"
+                                               Margin="4"
+                                               Padding="0"
+                                               BackgroundColor="Transparent">
+                                            <Image Source="{Binding ImageURL}"
+                                           />
+                                        </Frame>
+                                        <Label Grid.Row="0"
+                                               Margin="15">
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="{Binding NameExercise}" 
+                                                      FontSize="30"
+                                                      FontFamily="TitilliumWeb-Black.ttf"
+                                                      FontAttributes="Italic"
+                                                      TextColor="Black"/>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+                                    </Grid>
+                                </StackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+
+
+                    </CollectionView>
+                </Grid>
+            </ScrollView>
+            
+        </Grid>
+
+            
+        
+    
+    
+    </ContentView.Content>
+
+    
+</ContentView>

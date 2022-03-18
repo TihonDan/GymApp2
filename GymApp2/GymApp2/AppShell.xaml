@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:views ="clr-namespace:GymApp.Views"
+            xmlns:vm="clr-namespace:GymApp.ViewModels"
+            xmlns:im="clr-namespace:GymApp.Helpers"
+            xmlns:view="clr-namespace:GymApp.Views"
+            x:Class="GymApp.AppShell"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            android:TabbedPage.ToolbarPlacement="Bottom" 
+            BarBackgroundColor="#434141" 
+            SelectedTabColor="#FFFFFF" 
+            UnselectedTabColor="#FFFFFF" 
+            >
+
+
+    <ContentPage Title="Home" Icon ="home.png" BackgroundColor="Black">
+        <view:Home/>
+    </ContentPage>
+
+    <ContentPage Title="Statistic" Icon ="statistic.png" BackgroundImageSource="welcomefone.jpg">
+        <view:Statistic/>
+    </ContentPage>
+
+    <ContentPage Title="Profile" Icon ="profile.png" BackgroundImageSource="welcomefone.jpg">
+        <view:Profile/>
+    </ContentPage>
+
+
+</TabbedPage>
